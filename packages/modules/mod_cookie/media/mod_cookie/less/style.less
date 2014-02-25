@@ -1,0 +1,31 @@
+.cookie-control {
+  margin: @cookie-control-margin;
+  padding: @cookie-control-padding;
+
+  @media(max-width: @screen-xs-max) {
+    margin-top: @cookie-control-screen-xs-margin-top;
+    padding: @cookie-control-screen-xs-padding;
+  }
+
+  .btn {
+    margin-right: @cookie-control-btn-margin-right;
+  }
+
+  .read-more {
+    margin-right: @cookie-control-read-more-margin-right;
+  }
+
+  .dropdown-menu {
+    padding: @cookie-control-dropdown-menu-padding;
+
+    @media(max-width: @screen-xs-max) {
+      width: @cookie-control-dropdown-menu-screen-xs-width;
+    }
+  }
+
+  .pull-right {
+    @media(max-width: @screen-xs-max) {
+      float: inherit !important;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="1.6">
+    <name>Cookie Law</name>
+    <author>Dave Li</author>
+    <creationDate>July 2013</creationDate>
+    <packagename>cookie-law</packagename>
+    <version>1.0.0</version>
+    <url>http://www.moyoweb.nl/</url>
+    <packager>Dave Li</packager>
+    <packagerurl>http://www.moyoweb.nl/</packagerurl>
+    <description>Cookie Law Package</description>
+    <files folder="packages">
+        <file type="module" id="cookie-law" client="site">modules</file>
+    </files>
+</extension>

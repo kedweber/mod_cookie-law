@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>Mod Cookie</name>
+	<author>Joep van der Heijden</author>
+	<creationDate>February 2014</creationDate>
+	<copyright>Copyright (C) 2005 - 2014 Moyo Web Architects. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>joep.van.der.heijden@moyoweb.nl</authorEmail>
+	<authorUrl>http://moyoweb.nl</authorUrl>
+	<version>1.0.0</version>
+	<description>Mod Cookie</description>
+	<files>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+		<filename module="mod_cookie">mod_cookie.php</filename>
+        <filename>html.php</filename>
+	</files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="short" type="text" default="" label="Short text" />
+                <field name="long" type="editor" default="" label="Long text" filter="raw"/>
+                <field name="read_more" type="text" default="" label="Read more" />
+                <field name="agree" type="text" default="" label="Agree" />
+                <field name="decline" type="text" default="" label="Decline" />
+            </fieldset>
+            <fieldset name="GA">
+                <field name="gakey" type="text" default="" label="Google Analytics Key" />
+                <field name="domain" type="text" default="" label="Domain name" />
+                <field name="allow_linker" type="checkbox" default="true" label="Allow Linker" />
+                <field name="universal" type="checkbox" default="true" label="Use Universal" />
+            </fieldset>
+            <fieldset name="CB">
+                <field name="cbuid" type="text" label="Chartbeat uid" />
+                <field name="cbdomain" type="text" label="Domain name" />
+                <field name="cbusecanonical" type="checkbox" default="true" label="Use canonical" />
+            </fieldset>
+        </fields>
+    </config>
+
+    <media folder="media/mod_cookie" destination="mod_cookie">
+        <folder>js</folder>
+        <folder>less</folder>
+    </media>
+</extension>
