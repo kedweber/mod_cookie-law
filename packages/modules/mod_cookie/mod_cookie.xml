@@ -18,11 +18,8 @@
     <config>
         <fields name="params">
             <fieldset name="basic">
-                <field name="short" type="text" default="This site uses cookies to store information on your computer." label="Short text" />
-                <field name="long" type="editor" default="" label="Long text" filter="raw"/>
-                <field name="read_more" type="text" default="Read more" label="Read more" />
-                <field name="agree" type="text" default="Agree" label="Agree" />
-                <field name="decline" type="text" default="Decline" label="Decline" />
+                <field name="short" type="editor" default="This site uses cookies to store information on your computer." label="Text" filter="raw"/>
+                <field name="dismiss" type="text" default="Dismiss" label="Dismiss" />
             </fieldset>
             <fieldset name="GA">
                 <field name="gakey" type="text" default="" label="Google Analytics Key" />

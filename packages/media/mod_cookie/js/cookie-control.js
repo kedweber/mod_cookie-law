@@ -5,65 +5,37 @@ function CookieControl(options) {
 }
 
 CookieControl.defaultOptions = {
-    'btn-accept': '.btn-cookie-agree',
-    'btn-decline': '.btn-cookie-decline',
+    'btn_dismiss': '.btn-dismiss',
     'container': '.cookie-control',
-    'read-more-btn-open': '+',
-    'read-more-btn-close': '-',
-    'read-more-btn': '.btn-primary',
-    'dropdown': '.dropdown',
     'ga_key': undefined,
     'ga_universal': false,
-    'cookie': 'moyo_accepted_cookie',
+    'cookie': 'moyo_cookie_dismissed',
     'exdays': 100,
     'cb_uid': undefined
 };
 
 CookieControl.prototype.init = function(options) {
-    var self = this;
-    jQuery.noConflict()(function($) {
-        self.options.$container = $(options.container);
-
-        if (getCookie(options.cookie) == 1) {
-            self.accept();
-            return;
-        }
-
-        // set visible
-        if (self.options.$container.hasClass('hide')) {
-            self.options.$container.removeClass('hide');
-        }
-
-        options.$container.find(options['btn-accept']).on('click', function() {
-           self.accept();
-        });
-        options.$container.find(options['btn-decline']).on('click', function() {
-            self.decline();
-        });
-        options.$container.find(options['dropdown']).on('show.bs.dropdown', function() {
-            self.openListener();
-        });
-        options.$container.find(options['dropdown']).on('hide.bs.dropdown', function() {
-            self.closeListener();
-        });
-    });
-};
-
-CookieControl.prototype.openListener = function() {
-    this.options.$container.find(this.options['read-more-btn']).val(this.options['read-more-btn-close']);
-};
-
-CookieControl.prototype.closeListener = function() {
-    this.options.$container.find(this.options['read-more-btn']).val(this.options['read-more-btn-open']);
-};
-
-CookieControl.prototype.accept = function() {
-    setCookie(this.options.cookie, 1, this.options.exdays);
-
-    this.options.$container.remove();
-
     this.getGA();
     this.getCB();
+
+    var self = this;
+    if (!getCookie(options.cookie)) {
+        jQuery.noConflict()(function($) {
+            $(options.container).removeClass('hide');
+            $(options.container).find(options.btn_dismiss).click(function() {
+                self.onDismiss();
+            });
+        });
+    }
+};
+
+CookieControl.prototype.onDismiss = function() {
+    var self = this;
+
+    setCookie(this.options.cookie, "1",this.options.exdays);
+    jQuery.noConflict()(function($) {
+        $(self.options.container).remove();
+    });
 };
 
 CookieControl.prototype.getGA = function() {
@@ -103,10 +75,6 @@ CookieControl.prototype.getCB = function() {
     e.setAttribute('type', 'text/javascript');
     e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
     document.body.appendChild(e);
-};
-
-CookieControl.prototype.decline = function() {
-    this.options.$container.remove();
 };
 
 function setCookie(cname,cvalue,exdays) {
