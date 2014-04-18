@@ -15,18 +15,19 @@ CookieControl.defaultOptions = {
 };
 
 CookieControl.prototype.init = function(options) {
-    this.getGA();
-    this.getCB();
-
     var self = this;
-    if (!getCookie(options.cookie)) {
-        jQuery.noConflict()(function($) {
+
+    jQuery.noConflict()(function($) {
+        self.getGA();
+        self.getCB();
+
+        if (!getCookie(options.cookie)) {
             $(options.container).removeClass('hide');
             $(options.container).find(options.btn_dismiss).click(function() {
                 self.onDismiss();
             });
-        });
-    }
+        }
+    });
 };
 
 CookieControl.prototype.onDismiss = function() {
