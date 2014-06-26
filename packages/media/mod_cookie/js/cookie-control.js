@@ -75,6 +75,7 @@ CookieControl.prototype.getCB = function() {
     e.setAttribute('language', 'javascript');
     e.setAttribute('type', 'text/javascript');
     e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+    e.setAttribute('async', '');
     document.body.appendChild(e);
 };
 
