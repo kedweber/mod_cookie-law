@@ -1,9 +1,9 @@
 {
-    "name": "moyo/cookie-law",
+    "name": "cta/cookie-law",
     "type": "joomlatools-installer",
     "description": "Router Package",
     "keywords": ["joomla", "moyo"],
-    "homepage": "https://moyoweb.assembla.com/code/moyo-content/git-17/nodes",
+    "homepage": "https://github.com/cta-int/cookie-law",
     "authors": [
         {
             "name": "Dave Li",
