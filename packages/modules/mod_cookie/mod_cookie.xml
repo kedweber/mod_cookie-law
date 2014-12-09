@@ -12,7 +12,7 @@
 	<files>
         <file module="mod_cookie">mod_cookie.php</file>
         <file>html.php</file>
-        
+
         <folder>language</folder>
         <folder>tmpl</folder>
 	</files>
@@ -32,6 +32,9 @@
                 <field name="cbuid" type="text" label="Chartbeat uid" />
                 <field name="cbdomain" type="text" label="Domain name" />
                 <field name="cbusecanonical" type="checkbox" default="true" label="Use canonical" />
+            </fieldset>
+            <fieldset name="HA">
+                <field name="appid" type="text" label="Heap Analytics ID" />
             </fieldset>
             <fieldset name="advanced">
                 <field name="moduleclass_sfx"
