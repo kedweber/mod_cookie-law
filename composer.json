@@ -1,8 +1,8 @@
 {
     "name": "cta/cookie-law",
     "type": "joomlatools-installer",
-    "description": "Router Package",
-    "keywords": ["joomla", "moyo"],
+    "description": "Cookie Law Package",
+    "keywords": ["joomla", "nooku", "moyo"],
     "homepage": "https://github.com/cta-int/cookie-law",
     "authors": [
         {

@@ -26,16 +26,16 @@ section:
 
 ```json
 {
-    "name": "moyo/cookie-law",
+    "name": "cta/cookie-law",
     "type": "vcs",
-    "url": "https://git.assembla.com/moyo-content.cookie-law.git"
+    "url": "https://github.com/cta-int/cookie-law.git"
 }
 ```
 
 The require section should contain the following line:
 
 ```json
-    "moyo/cookie-law": "1.0.*",
+    "cta/cookie-law": "1.0.*",
 ```
 
 Afterward, just run `composer update` from the root of your Joomla project.
