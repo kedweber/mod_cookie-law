@@ -24,8 +24,9 @@
         'ga_domain_name': '<?= $params->domain ?>',
         'ga_allow_linker': <?= $params->allow_linker == true ? 'true' : 'false'; ?>,
         'ga_universal': <?= $params->universal == true ? 'true' : 'false'; ?>,
-        'cb_uid': <?= $params->cbuid ? $params->cbuid : 'undefined'; ?>,
+        'cb_uid': <?= $params->cbuid ? "'" . $params->cbuid . "'" : 'undefined'; ?>,
         'cb_domain': '<?= $params->cbdomain; ?>',
-        'cb_useCanonical': <?= $params->cbusecanonical == true ? 'true' : 'false'; ?>
+        'cb_useCanonical': <?= $params->cbusecanonical == true ? 'true' : 'false'; ?>,
+        'ha_appid' : '<?= $params->appid; ?>'
     });
 </script>

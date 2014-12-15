@@ -4,9 +4,9 @@
     <author>Dave Li</author>
     <creationDate>July 2013</creationDate>
     <packagename>cookie-law</packagename>
-    <version>1.0.3</version>
+    <version>1.0.5</version>
     <url>http://www.moyoweb.nl/</url>
-    <packager>Dave Li</packager>
+    <packager>Moyo Web Architcts</packager>
     <packagerurl>http://www.moyoweb.nl/</packagerurl>
     <description>Cookie Law Package</description>
     <files folder="packages">
