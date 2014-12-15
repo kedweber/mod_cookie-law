@@ -1,0 +1,1 @@
+# CHANGELOG pkg_cookie_law### 1.0.5 15 december 2014: * Added Changelog* Added support for Heap Analytics
