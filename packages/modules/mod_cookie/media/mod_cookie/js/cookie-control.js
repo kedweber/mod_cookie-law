@@ -11,7 +11,8 @@ CookieControl.defaultOptions = {
     'ga_universal': false,
     'cookie': 'moyo_cookie_dismissed',
     'exdays': 100,
-    'cb_uid': undefined
+    'cb_uid': undefined,
+    'ha_appid': undefined
 };
 
 CookieControl.prototype.init = function(options) {
@@ -20,6 +21,7 @@ CookieControl.prototype.init = function(options) {
     jQuery.noConflict()(function($) {
         self.getGA();
         self.getCB();
+        self.getHA();
 
         if (!getCookie(options.cookie)) {
             $(options.container).removeClass('hide');
@@ -77,6 +79,35 @@ CookieControl.prototype.getCB = function() {
     e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
     e.setAttribute('async', '');
     document.body.appendChild(e);
+};
+
+CookieControl.prototype.getHA = function() {
+    if(!this.options.ha_appid) {
+        console.log('No Heap Analytics key found!');
+        return;
+    }
+
+    window.heap = window.heap || [];
+    window.heap.appid = this.options.ha_appid;
+    window.heap.config = {};
+
+    var o = function(t) {
+        return function() {
+            heap.push([t].concat(Array.prototype.slice.call(arguments,0)))
+        }
+    };
+    var p = ["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"];
+    for(var c = 0; c<p.length; c++) {
+        heap[p[c]]=o(p[c]);
+    }
+
+    var ha = document.createElement("script");
+    ha.setAttribute('type', 'text/javascript');
+    ha.setAttribute('async', true);
+    ha.setAttribute('src', '//cdn.heapanalytics.com/js/heap.js');
+
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(ha, s);
 };
 
 function setCookie(cname,cvalue,exdays) {
