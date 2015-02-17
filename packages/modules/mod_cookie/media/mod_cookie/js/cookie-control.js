@@ -46,12 +46,20 @@ CookieControl.prototype.getGA = function() {
         console.log('No Google Analytics Key found!');
         return;
     }
+	
+	var canonical_link;
+	try{
+	  	canonical_link = jQuery('link[rel=canonical]').attr('href').split(location.hostname)[1] || undefined;
+	}
+	catch(e){
+  		canonical_link = undefined;
+	}
 
     window._gaq = window._gaq || [];
     window._gaq.push(['_setAccount', this.options.ga_key]);
     window._gaq.push(['_setDomainName', this.options.ga_domain_name]);
     window._gaq.push(['_setAllowLinker', this.options.ga_allow_linker]);
-    window._gaq.push(['_trackPageview']);
+    window._gaq.push(['_trackPageview', canonical_link]);
 
     var ga = document.createElement('script');
     ga.type = 'text/javascript';
