@@ -1,5 +1,9 @@
 # CHANGELOG pkg_cookie_law
 
+### 1.0.6 - 3 march 2015:
+
+* Updated to new Heap API calls.
+
 ### 1.0.5 - 15 december 2014: 
 
 * Added Changelog
