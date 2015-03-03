@@ -104,7 +104,7 @@ CookieControl.prototype.getHA = function() {
     var ha = document.createElement("script");
     ha.setAttribute('type', 'text/javascript');
     ha.setAttribute('async', true);
-    ha.setAttribute('src', '//cdn.heapanalytics.com/js/heap.js');
+    ha.setAttribute('src', '//cdn.heapanalytics.com/js/heap-' + this.options.ha_appid + '.js');
 
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(ha, s);

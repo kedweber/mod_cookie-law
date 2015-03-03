@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1" client="site" method="upgrade">
 	<name>Mod Cookie</name>
-	<author>Joep van der Heijden</author>
+	<author>Moyo Web Architects</author>
 	<creationDate>February 2014</creationDate>
 	<copyright>Copyright (C) 2005 - 2014 Moyo Web Architects. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>joep.van.der.heijden@moyoweb.nl</authorEmail>
 	<authorUrl>http://moyoweb.nl</authorUrl>
-	<version>1.0.5</version>
+	<version>1.0.6</version>
 	<description>Mod Cookie</description>
 	<files>
         <file module="mod_cookie">mod_cookie.php</file>
