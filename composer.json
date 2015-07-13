@@ -1,9 +1,9 @@
 {
-    "name": "cta/cookie-law",
+    "name": "moyo/mod_cookie-law",
     "type": "joomlatools-installer",
     "description": "Cookie Law Package",
     "keywords": ["joomla", "nooku", "moyo"],
-    "homepage": "https://github.com/cta-int/cookie-law",
+    "homepage": "https://github.com/kedweber/mod_cookie-law",
     "authors": [
         {
             "name": "Dave Li",
