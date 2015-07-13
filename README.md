@@ -24,6 +24,8 @@ applicable. When the site visitor has dismissed the warning, the analytics servi
 Installation is done through composer. In your `composer.json` file, you should add the following lines to the repositories
 section:
 
+from this specific repository;
+
 ```json
 {
     "name": "moyo/cookie-law",
@@ -31,6 +33,8 @@ section:
     "url": "https://github.com/kedweber/mod_cookie-law.git"
 }
 ```
+
+or from the company that sponsered the endeavours;
 
 ```json
 {
